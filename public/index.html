@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TasksAPI</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+        background-color: rgb(54, 52, 52);
+        color: whitesmoke;
+        margin: 0 15rem;
+      }
+      @media screen and (max-width: 600px) {
+        body {
+          margin: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tasks API</h1>
+    <h2>Btech-solutions</h2>
+    <p>
+      This is a simple REST API built with Express js. It is used for task
+      menagment CRUD operations conected to a Mongo database.
+    </p>
+    <hr />
+    <h2>MODELS</h2>
+    <hr />
+    <h3>Task model</h3>
+    <p>
+      name: { type: String, required: [true, 'must provide name'], trim: true,
+      maxlength: [20, 'name can not be more than 20 characters'], },
+      <br />
+      completed: { type: Boolean, default: false, },
+    </p>
+    <hr />
+    <h2>Routes</h2>
+    <hr />
+    <br />
+    <h3>/api/tasks</h3>
+    <ul>
+      <li>GET '/' (get all tasks)</li>
+      <li>POST '/' (create a task)</li>
+      <li>GET '/:id' (get a single task)</li>
+      <li>PATCH '/:id' (update a task)</li>
+      <li>DELETE '/:id' (delete a task)</li>
+    </ul>
+  </body>
+</html>

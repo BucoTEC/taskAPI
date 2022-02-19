@@ -13,15 +13,15 @@ app.use(express.json());
 
 // routes
 
-app.use("/api/tasks", tasks);
+app.use("/api", tasks);
 
 app.use(notFound);
 app.use(errorHandlerMiddleware);
 const port = process.env.PORT || 5000;
-
+const db = process.env.MONGO_URI || 'mongodb://localhost:27017/taskAPI'
 const start = async () => {
   try {
-    await connectDB(process.env.MONGO_URI);
+    await connectDB(db);
     app.listen(port, () =>
       console.log(`Server is listening on port ${port}...`)
     );

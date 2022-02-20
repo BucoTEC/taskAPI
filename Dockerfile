@@ -1,7 +1,8 @@
-FROM node:latest
+FROM node:16.14.0
 WORKDIR /app
-COPY package.json package.json
-COPY package-lock.json package-lock.json
-RUN npm install
-COPY . .
-CMD [ "node", "app.js" ]
+COPY package.json .
+RUN npm i
+ADD . .
+ENV PORT 5000
+EXPOSE $PORT
+CMD npm start

@@ -1,0 +1,20 @@
+version: '3'
+services:
+  server:
+    build: .
+    ports:
+      - 5000:5000
+    volumes:
+      - ./:/app
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=buco
+      - MONGO_INITDB_ROOT_PASSWORD=0401
+    volumes:
+      - mongo-db:/data/db
+
+volumes:
+  mongo-db:
